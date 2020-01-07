@@ -2,8 +2,7 @@
 
 On server like mysql:--
 
-ls /usr/lib64/nagios/plugins/  ==> plugin or script
-copy your script or plugin 
+ls /usr/lib64/nagios/plugins/  ==> copy your script or plugin 
 
 vim /etc/nagios/nrpe.cfg  
 ```
