@@ -77,6 +77,8 @@ there should be a file with name check_nrpe
 
 cat /usr/local/nagios/libexec/check_nrpe  ## this is default script when you install nrpe.
 
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg   #check the nagios conf gile
+
 service nagios restart
 
 
