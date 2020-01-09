@@ -88,6 +88,52 @@ service nagios restart
 ==============================================================================================
 # windows server monitoring
 
+On windows server
+```
+
+; Undocumented key
+password = 1234Password
+
+; Undocumented key    #nagios server IP
+allowed hosts = 172.31.36.117
+
+
+; in flight - TODO
+[/modules]
+
+; Undocumented key
+CheckExternalScripts = 1
+
+; Undocumented key
+CheckHelpers = 1
+
+; Undocumented key
+CheckNSCP = 1
+
+; Undocumented key
+CheckDisk = 1
+
+; Undocumented key
+WEBServer = 1
+
+; Undocumented key
+CheckSystem = 1
+
+; Undocumented key
+NSClientServer = 1
+
+; Undocumented key
+CheckEventLog = 1
+
+; Undocumented key
+NSCAClient = 1
+
+```
+run ==> services.msc
+restart the NSClient++ in windows server
+
+linux server
+
 vim /usr/local/nagios/etc/objects/commands.cfg
 ```
 # 'check_nt' command definition
