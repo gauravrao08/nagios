@@ -1,6 +1,23 @@
 # nagios
 
-On server like mysql:--
+On server like mysql or client server:--
+yum install epel-release
+yum install nrpe nagios-plugins-all openssl
+
+ vi /etc/nagios/nrpe.cfg
+```
+allowed_hosts=127.0.0.1,192.168.72.28 #nagios server IP
+
+dont_blame_nrpe=1
+
+command[check_users]=/usr/local/nagios/libexec/check_users $ARG1$
+command[check_load]=/usr/local/nagios/libexec/check_load $ARG1$
+command[check_disk]=/usr/local/nagios/libexec/check_disk $ARG1$
+command[check_swap]=/usr/local/nagios/libexec/check_swap $ARG1$
+command[check_cpu_stats]=/usr/lib64/nagios/plugins/check_cpu_stats.sh $ARG1$
+command[check_memory]=/usr/local/nagios/libexec/check_memory  $ARG1$
+command[check_service]=/usr/local/nagios/libexec/check_service  $ARG1$
+```
 
 ls /usr/lib64/nagios/plugins/  ==> copy your script or plugin 
 
