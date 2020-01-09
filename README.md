@@ -89,6 +89,9 @@ service nagios restart
 # windows server monitoring
 
 On windows server
+C:\Program Files\NSClient++
+edit "nsclient" file and do the following chnages disable or enable to 1 if you want to change password or chnage nagios server IP
+
 ```
 
 ; Undocumented key
