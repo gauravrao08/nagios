@@ -1,4 +1,4 @@
-# nagios
+#linux  nagios
 
 On server like mysql or client server:--
 
@@ -33,6 +33,7 @@ command[script_name]=/usr/lib64/nagios/plugins/script_name  $ARG1$  $ARG2$  $ARG
 
 
 ```
+
 service nrpe restart
 
 On Nagios Sever:-
@@ -83,8 +84,9 @@ cat /usr/local/nagios/libexec/check_nrpe  ## this is default script when you ins
 /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg   #check the nagios conf gile
 
 service nagios restart
+
 ==============================================================================================
-for windows server
+# windows server monitoring
 
 vim /usr/local/nagios/etc/objects/commands.cfg
 ```
@@ -127,5 +129,7 @@ define service{
         }
 
 ```
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg   #check the nagios conf gile
 
+service nagios restart
 
