@@ -36,6 +36,9 @@ command[script_name]=/usr/lib64/nagios/plugins/script_name  $ARG1$  $ARG2$  $ARG
 service nrpe restart
 
 On Nagios Sever:-
+
+yum install nagios-plugins-all nagios-plugins-nrpe nrpe
+
 /usr/local/nagios/etc/objects
 
 vim command.cfg
