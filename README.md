@@ -83,5 +83,49 @@ cat /usr/local/nagios/libexec/check_nrpe  ## this is default script when you ins
 /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg   #check the nagios conf gile
 
 service nagios restart
+==============================================================================================
+for windows server
+
+vim /usr/local/nagios/etc/objects/commands.cfg
+```
+# 'check_nt' command definition
+define command{
+        command_name    check_nt
+        command_line    $USER1$/check_nt -H $HOSTADDRESS$ -p 12489 -s password -v $ARG1$ $ARG2$
+        }
+
+# -s password   ##password is of windows server , when you install NSClient++ it will ask for password or rendem generate password
+
+```
+
+vim /usr/local/nagios/etc/nagios.cfg  ==> edit uncomment line 38 and copy to server path and again comment it or you can use same windows file also
+
+/usr/local/nagios/etc/objects/windows.cfg   ==> copy this windows file /usr/local/nagios/etc/servers/windows.cfg 
+
+```
+define host{
+        use             windows-server  ; Inherit default values from a template
+        host_name       nagios-windowserver     ; The name we're giving to this host
+        alias           nagios-windowserver     ; A longer name associated with the host
+        address         172.31.43.63    ; IP address of the host
+        }
+
+----
+
+define service{
+        use                     generic-service
+        host_name               nagios-windowserver
+        service_description     C:\ Drive Space
+        check_command           check_nt!USEDDISKSPACE!-l c -w 80 -c 90
+        }
+
+define service{
+        use                     generic-service
+        host_name               nagios-windowserver
+        service_description     D:\ Drive Space
+        check_command           check_nt!USEDDISKSPACE!-l d -w 80 -c 90
+        }
+
+```
 
 
