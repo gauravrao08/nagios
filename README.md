@@ -1,7 +1,9 @@
 # nagios
 
 On server like mysql or client server:--
+
 yum install epel-release
+
 yum install nrpe nagios-plugins-all openssl
 
  vi /etc/nagios/nrpe.cfg
