@@ -12,6 +12,7 @@ allowed_hosts=127.0.0.1,192.168.72.28 #nagios server IP
 
 dont_blame_nrpe=1
 
+## for ubuntu server
 command[check_users]=/usr/local/nagios/libexec/check_users $ARG1$
 command[check_load]=/usr/local/nagios/libexec/check_load $ARG1$
 command[check_disk]=/usr/local/nagios/libexec/check_disk $ARG1$
@@ -19,6 +20,18 @@ command[check_swap]=/usr/local/nagios/libexec/check_swap $ARG1$
 command[check_cpu_stats]=/usr/lib64/nagios/plugins/check_cpu_stats.sh $ARG1$
 command[check_memory]=/usr/local/nagios/libexec/check_memory  $ARG1$
 command[check_service]=/usr/local/nagios/libexec/check_service  $ARG1$
+
+
+
+## for centos server
+command[check_users]=/usr/lib64/nagios/plugins/check_users $ARG1$
+command[check_load]=/usr/lib64/nagios/plugins/check_load $ARG1$
+command[check_disk]=/usr/lib64/nagios/plugins/check_disk $ARG1$
+command[check_swap]=/usr/lib64/nagios/plugins/check_swap $ARG1$
+command[check_cpu_stats]=/usr/lib64/nagios/plugins/check_cpu_stats.sh $ARG1$
+command[check_memory]=/usr/lib64/nagios/plugins/check_memory  $ARG1$
+command[check_service]=/usr/lib64/nagios/plugins/check_service  $ARG1$
+command[check_connection.pl]=/usr/lib64/nagios/plugins/check_connection.pl
 ```
 
 ls /usr/lib64/nagios/plugins/  ==> copy your script or plugin 
