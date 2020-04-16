@@ -32,6 +32,9 @@ command[check_cpu_stats]=/usr/lib64/nagios/plugins/check_cpu_stats.sh $ARG1$
 command[check_memory]=/usr/lib64/nagios/plugins/check_memory  $ARG1$
 command[check_service]=/usr/lib64/nagios/plugins/check_service  $ARG1$
 command[check_connection.pl]=/usr/lib64/nagios/plugins/check_connection.pl
+command[check_inode]=/usr/lib64/nagios/plugins/check_inode $ARG1$
+command[uptime]=/usr/lib64/nagios/plugins/uptime $ARG1$
+
 ```
 
 ls /usr/lib64/nagios/plugins/  ==> copy your script or plugin 
